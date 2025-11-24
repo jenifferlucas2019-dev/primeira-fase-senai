@@ -1,0 +1,28 @@
+const prompt = require("prompt-sync")();
+
+// Ler o preço do produto
+let preco = parseFloat(prompt("Digite o preço do produto: "));
+
+// Ler a quantidade de moedas
+let m1   = parseInt(prompt("Quantidade de moedas de 1 real: "));
+let m050 = parseInt(prompt("Quantidade de moedas de 50 centavos: "));
+let m025 = parseInt(prompt("Quantidade de moedas de 25 centavos: "));
+let m010 = parseInt(prompt("Quantidade de moedas de 10 centavos: "));
+let m005 = parseInt(prompt("Quantidade de moedas de 5 centavos: "));
+
+// Calcular total
+let total = m1 * 1.00 +
+            m050 * 0.50 +
+            m025 * 0.25 +
+            m010 * 0.10 +
+            m005 * 0.05;
+
+// Mostrar total
+console.log(`\nTotal no cofrinho: R$ ${total.toFixed(2)}`);
+
+// Verificar se dá para comprar
+if (total >= preco) {
+    console.log("Você TEM dinheiro suficiente para comprar o produto.");
+} else {
+    console.log("Você NÃO tem dinheiro suficiente para comprar o produto.");
+}
